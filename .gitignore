@@ -1,0 +1,21 @@
+# dependency directories
+node_modules/
+
+# build outputs
+dist/
+dist-ssr/
+
+# IDE / local configs
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.env
+.env.local
+
+# system tasks logs
+.system_generated/
