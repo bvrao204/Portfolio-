@@ -74,3 +74,56 @@ if (downloadBtn) {
         document.body.removeChild(tempLink);
     });
 }
+
+/* ==================== interactive gauge charts ==================== */
+document.querySelectorAll('.chart-dashboard').forEach(dashboard => {
+    const legendItems = dashboard.querySelectorAll('.legend-item');
+    const needle = dashboard.querySelector('.gauge-needle');
+    const valueEl = dashboard.querySelector('.gauge-value');
+    const detailsCard = dashboard.querySelector('.skills-details-card');
+
+    function activateSkill(item) {
+        // Remove active class from all other legend items
+        legendItems.forEach(l => l.classList.remove('active'));
+
+        // Highlight this legend item
+        item.classList.add('active');
+
+        // Extract skill details
+        const skillKey = item.getAttribute('data-skill');
+        const name = item.querySelector('.legend-name').textContent;
+        const percentVal = parseInt(item.getAttribute('data-val'));
+        const percentStr = percentVal + '%';
+        const desc = item.getAttribute('data-desc');
+        const themeColor = window.getComputedStyle(item.querySelector('.legend-dot')).backgroundColor;
+
+        // Calculate needle rotation: 0% is -90deg, 100% is +90deg
+        const rotation = (percentVal / 100) * 180 - 90;
+
+        // Rotate needle
+        needle.style.transform = `rotate(${rotation}deg)`;
+
+        // Update value text and its color
+        valueEl.textContent = percentStr;
+        valueEl.style.fill = themeColor;
+
+        // Update details card content and active glow color
+        detailsCard.classList.add('active');
+        detailsCard.style.setProperty('--active-color', themeColor);
+        const rgb = themeColor.match(/\d+/g);
+        if (rgb) {
+            detailsCard.style.setProperty('--active-rgb', `${rgb[0]}, ${rgb[1]}, ${rgb[2]}`);
+        }
+
+        detailsCard.innerHTML = `
+            <h4>${name} <span style="color: ${themeColor}; float: right;">${percentStr}</span></h4>
+            <p>${desc}</p>
+        `;
+    }
+
+    // Attach click and mouseenter handlers
+    legendItems.forEach(item => {
+        item.addEventListener('click', () => activateSkill(item));
+        item.addEventListener('mouseenter', () => activateSkill(item));
+    });
+});
