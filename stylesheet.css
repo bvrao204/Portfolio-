@@ -277,13 +277,13 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6rem;
+    gap: 8rem;
     background: #112e42;
 }
 
 .about-img img {
-    width: 30rem;
-    height: 30rem;
+    width: 35rem;
+    height: 35rem;
     border-radius: 50%;
     border: .4rem solid #0ef;
     box-shadow: 0 0 20px #0ef;
@@ -300,15 +300,15 @@ section {
 }
 
 .about-content h3 {
-    font-size: 2.6rem;
+    font-size: 3.2rem;
     color: #0ef;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
 }
 
 .about-content p {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 3.5rem;
 }
 
 .about-content .btn-box {
