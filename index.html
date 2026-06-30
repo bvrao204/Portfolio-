@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
     <title>bvenkateswararao/portfolio.com</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
-  <script type="module" crossorigin src="/assets/index-pzOoxOCF.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-8I_8H9gr.css">
+  <script type="module" crossorigin src="/Portfolio-/assets/index-CwmPm-3G.js"></script>
+  <link rel="stylesheet" crossorigin href="/Portfolio-/assets/index-Bh3alyiP.css">
 </head>
+
 <body>
     <header class="header">
         <a href="#" class="logo">B Venkateswararao/Portfolio</a>
@@ -30,12 +32,19 @@
             <h3>Hello, It's Me</h3>
             <h1>B Venkateswara Rao</h1>
             <h3>And I'm a <span class="text"></span></h3>
-            <p>Aspiring Software Engineer with expertise in Web Development, Data Science, and AI-driven solutions. I love transforming data into insights and building high-performance web applications.</p>
+            <p>Aspiring Software Engineer with expertise in Web Development, Data Science, and AI-driven solutions. I
+                love transforming data into insights and building high-performance web applications.</p>
             <div class="home-sci">
                 <a href="#" style="--i:7"><i class='bx bxl-facebook'></i></a>
-                <a href="#" style="--i:8"><i class='bx bxl-instagram'></i></a>
+                <div class="sci-dropdown">
+                    <a href="#" style="--i:8" class="dropdown-trigger"><i class='bx bxl-instagram'></i></a>
+                    <div class="dropdown-menu">
+                        <a href="https://www.instagram.com/its__venky__06/" target="_blank"><i class='bx bx-user-circle'></i> @its__venky__06</a>
+                        <a href="https://www.instagram.com/__spamm.2204__?igsh=MXIyaHg2ODQwN3ZkZg==" target="_blank"><i class='bx bx-ghost'></i> @__spamm.2204__</a>
+                    </div>
+                </div>
                 <a href="#" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
-                <a href="#" style="--i:10"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.linkedin.com/in/b-venkateswara-rao-b005b3243" target="_blank" style="--i:10"><i class='bx bxl-linkedin'></i></a>
             </div>
             <a href="#contact" class="btn-box">More About Me</a>
         </div>
@@ -43,39 +52,99 @@
 
     <section class="about" id="about">
         <div class="about-img">
-            <img src="/assets/about-img-DSRoEjV8.png" alt="B Venkateswara Rao">
+            <img src="/Portfolio-/assets/about-img-DSRoEjV8.png" alt="B Venkateswara Rao">
         </div>
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
             <h3>Aspiring Software Engineer!</h3>
-            <p>I am a highly motivated developer with a passion for web technologies, data analytics, and artificial intelligence. I enjoy building responsive front-end layouts, designing database structures, and deploying AI models to deliver complete, optimized digital systems.</p>
+            <p>I am a highly motivated developer with a passion for web technologies, data analytics, and artificial
+                intelligence. I enjoy building responsive front-end layouts, designing database structures, and
+                deploying AI models to deliver complete, optimized digital systems.</p>
             <a href="resume.jpg" class="btn-box" id="download-cv-btn">Download CV</a>
         </div>
     </section>
 
     <section class="skills" id="skills">
         <h2 class="heading">My <span>Skills</span></h2>
-        
+
         <div class="skills-row">
             <div class="skills-column">
                 <h3 class="title">Coding Skills</h3>
                 <div class="skills-box">
-                    <div class="skills-content">
-                        <div class="progress">
-                            <h3>HTML 5 <span>90%</span></h3>
-                            <div class="bar"><span></span></div>
+                    <div class="chart-dashboard">
+                        <div class="chart-visual">
+                            <div class="gauge-chart" id="coding-gauge">
+                                <svg viewBox="0 0 200 120">
+                                    <!-- Gauge segments (rotated to start at bottom-left and draw clockwise) -->
+                                    <g transform="rotate(-180 100 100)">
+                                        <circle class="gauge-segment gauge-seg-1" cx="100" cy="100" r="65"
+                                            stroke-dasharray="40.84 367.56" stroke-dashoffset="0"></circle>
+                                        <circle class="gauge-segment gauge-seg-2" cx="100" cy="100" r="65"
+                                            stroke-dasharray="40.84 367.56" stroke-dashoffset="-40.84"></circle>
+                                        <circle class="gauge-segment gauge-seg-3" cx="100" cy="100" r="65"
+                                            stroke-dasharray="40.84 367.56" stroke-dashoffset="-81.68"></circle>
+                                        <circle class="gauge-segment gauge-seg-4" cx="100" cy="100" r="65"
+                                            stroke-dasharray="40.84 367.56" stroke-dashoffset="-122.52"></circle>
+                                        <circle class="gauge-segment gauge-seg-5" cx="100" cy="100" r="65"
+                                            stroke-dasharray="40.84 367.56" stroke-dashoffset="-163.36"></circle>
+                                    </g>
+
+                                    <!-- Ticks and markers -->
+                                    <line class="gauge-tick" x1="20" y1="100" x2="12" y2="100"></line>
+                                    <line class="gauge-tick" x1="35.3" y1="53" x2="28.8" y2="48.3"></line>
+                                    <line class="gauge-tick" x1="75.3" y1="23.9" x2="72.8" y2="16.3"></line>
+                                    <line class="gauge-tick" x1="124.7" y1="23.9" x2="127.2" y2="16.3"></line>
+                                    <line class="gauge-tick" x1="164.7" y1="53" x2="171.2" y2="48.3"></line>
+                                    <line class="gauge-tick" x1="180" y1="100" x2="188" y2="100"></line>
+
+                                    <!-- Scale Labels -->
+                                    <text x="6" y="104" class="gauge-label" text-anchor="middle">0</text>
+                                    <text x="22" y="44" class="gauge-label" text-anchor="middle">20</text>
+                                    <text x="68" y="12" class="gauge-label" text-anchor="middle">40</text>
+                                    <text x="132" y="12" class="gauge-label" text-anchor="middle">60</text>
+                                    <text x="178" y="44" class="gauge-label" text-anchor="middle">80</text>
+                                    <text x="196" y="104" class="gauge-label" text-anchor="middle">100</text>
+
+                                    <!-- Dynamic Value Readout -->
+                                    <text x="165" y="32" class="gauge-value" text-anchor="middle">--</text>
+
+                                    <!-- Pivot Needle and Center cap -->
+                                    <line class="gauge-needle" x1="100" y1="100" x2="100" y2="30"></line>
+                                    <circle class="gauge-needle-cap" cx="100" cy="100" r="8"></circle>
+                                </svg>
+                            </div>
                         </div>
-                        <div class="progress">
-                            <h3>CSS 3 <span>85%</span></h3>
-                            <div class="bar"><span></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>JavaScript <span>80%</span></h3>
-                            <div class="bar"><span></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>React JS <span>75%</span></h3>
-                            <div class="bar"><span></span></div>
+                        <div class="chart-info">
+                            <div class="legend-list">
+                                <div class="legend-item" data-skill="html" data-val="90"
+                                    data-desc="Expert in writing semantic, SEO-friendly, and accessible HTML. Experienced in integrating modern markup features and ensuring strict web standard compliance.">
+                                    <span class="legend-dot dot-html"></span>
+                                    <span class="legend-name">HTML 5</span>
+                                    <span class="legend-val">90%</span>
+                                </div>
+                                <div class="legend-item" data-skill="css" data-val="85"
+                                    data-desc="Proficient in advanced stylesheet setups (Flexbox, Grid), smooth animations, modern responsive designs, custom variables, and Tailwind CSS.">
+                                    <span class="legend-dot dot-css"></span>
+                                    <span class="legend-name">CSS 3</span>
+                                    <span class="legend-val">85%</span>
+                                </div>
+                                <div class="legend-item" data-skill="js" data-val="80"
+                                    data-desc="Strong engineering skills in ES6+ syntax, dynamic DOM interactions, async processing, browser APIs, and object-oriented algorithms.">
+                                    <span class="legend-dot dot-js"></span>
+                                    <span class="legend-name">JavaScript</span>
+                                    <span class="legend-val">80%</span>
+                                </div>
+                                <div class="legend-item" data-skill="react" data-val="75"
+                                    data-desc="Solid knowledge in reactive front-end architectures using hooks, custom state providers, context routing, and optimized component structures.">
+                                    <span class="legend-dot dot-react"></span>
+                                    <span class="legend-name">React JS</span>
+                                    <span class="legend-val">75%</span>
+                                </div>
+                            </div>
+                            <div class="skills-details-card" id="coding-details">
+                                <p class="details-placeholder">Hover or click a skill card to watch the needle point to
+                                    your proficiency level.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,22 +153,80 @@
             <div class="skills-column">
                 <h3 class="title">Professional Skills</h3>
                 <div class="skills-box">
-                    <div class="skills-content">
-                        <div class="progress">
-                            <h3>Web Design <span>95%</span></h3>
-                            <div class="bar"><span></span></div>
+                    <div class="chart-dashboard">
+                        <div class="chart-visual">
+                            <div class="gauge-chart" id="professional-gauge">
+                                <svg viewBox="0 0 200 120">
+                                    <!-- Gauge segments -->
+                                    <g transform="rotate(-180 100 100)">
+                                        <circle class="gauge-segment gauge-seg-1" cx="100" cy="100" r="65"
+                                            stroke-dasharray="40.84 367.56" stroke-dashoffset="0"></circle>
+                                        <circle class="gauge-segment gauge-seg-2" cx="100" cy="100" r="65"
+                                            stroke-dasharray="40.84 367.56" stroke-dashoffset="-40.84"></circle>
+                                        <circle class="gauge-segment gauge-seg-3" cx="100" cy="100" r="65"
+                                            stroke-dasharray="40.84 367.56" stroke-dashoffset="-81.68"></circle>
+                                        <circle class="gauge-segment gauge-seg-4" cx="100" cy="100" r="65"
+                                            stroke-dasharray="40.84 367.56" stroke-dashoffset="-122.52"></circle>
+                                        <circle class="gauge-segment gauge-seg-5" cx="100" cy="100" r="65"
+                                            stroke-dasharray="40.84 367.56" stroke-dashoffset="-163.36"></circle>
+                                    </g>
+
+                                    <!-- Ticks -->
+                                    <line class="gauge-tick" x1="20" y1="100" x2="12" y2="100"></line>
+                                    <line class="gauge-tick" x1="35.3" y1="53" x2="28.8" y2="48.3"></line>
+                                    <line class="gauge-tick" x1="75.3" y1="23.9" x2="72.8" y2="16.3"></line>
+                                    <line class="gauge-tick" x1="124.7" y1="23.9" x2="127.2" y2="16.3"></line>
+                                    <line class="gauge-tick" x1="164.7" y1="53" x2="171.2" y2="48.3"></line>
+                                    <line class="gauge-tick" x1="180" y1="100" x2="188" y2="100"></line>
+
+                                    <!-- Labels -->
+                                    <text x="6" y="104" class="gauge-label" text-anchor="middle">0</text>
+                                    <text x="22" y="44" class="gauge-label" text-anchor="middle">20</text>
+                                    <text x="68" y="12" class="gauge-label" text-anchor="middle">40</text>
+                                    <text x="132" y="12" class="gauge-label" text-anchor="middle">60</text>
+                                    <text x="178" y="44" class="gauge-label" text-anchor="middle">80</text>
+                                    <text x="196" y="104" class="gauge-label" text-anchor="middle">100</text>
+
+                                    <!-- Dynamic Value -->
+                                    <text x="165" y="32" class="gauge-value" text-anchor="middle">--</text>
+
+                                    <!-- Needle -->
+                                    <line class="gauge-needle" x1="100" y1="100" x2="100" y2="30"></line>
+                                    <circle class="gauge-needle-cap" cx="100" cy="100" r="8"></circle>
+                                </svg>
+                            </div>
                         </div>
-                        <div class="progress">
-                            <h3>Responsive Layouts <span>90%</span></h3>
-                            <div class="bar"><span></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>UI/UX Styling <span>85%</span></h3>
-                            <div class="bar"><span></span></div>
-                        </div>
-                        <div class="progress">
-                            <h3>Version Control <span>80%</span></h3>
-                            <div class="bar"><span></span></div>
+                        <div class="chart-info">
+                            <div class="legend-list">
+                                <div class="legend-item" data-skill="design" data-val="95"
+                                    data-desc="Creative specialist building user-centric interfaces. Proficient in styling color palettes, glassmorphism layers, and responsive UI structures.">
+                                    <span class="legend-dot dot-design"></span>
+                                    <span class="legend-name">Web Design</span>
+                                    <span class="legend-val">95%</span>
+                                </div>
+                                <div class="legend-item" data-skill="responsive" data-val="90"
+                                    data-desc="Skilled in designing modern fluid viewports that scale cleanly across phones, tablets, notebooks, and ultrawide screens.">
+                                    <span class="legend-dot dot-responsive"></span>
+                                    <span class="legend-name">Responsive Layouts</span>
+                                    <span class="legend-val">90%</span>
+                                </div>
+                                <div class="legend-item" data-skill="uiux" data-val="85"
+                                    data-desc="Focuses on building elegant, dynamic styling systems with micro-animations, transitions, and click behaviors to maximize user engagement.">
+                                    <span class="legend-dot dot-uiux"></span>
+                                    <span class="legend-name">UI/UX Styling</span>
+                                    <span class="legend-val">85%</span>
+                                </div>
+                                <div class="legend-item" data-skill="git" data-val="80"
+                                    data-desc="Familiar with professional Git structures, pull-request collaborations, repository branching strategies, and basic CI/CD setups.">
+                                    <span class="legend-dot dot-git"></span>
+                                    <span class="legend-name">Version Control</span>
+                                    <span class="legend-val">80%</span>
+                                </div>
+                            </div>
+                            <div class="skills-details-card" id="professional-details">
+                                <p class="details-placeholder">Hover or click a skill card to watch the needle point to
+                                    your proficiency level.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -111,26 +238,38 @@
         <h2 class="heading">Latest <span>Projects</span></h2>
         <div class="portfolio-container">
             <div class="portfolio-box">
-                <img src="/assets/project1-BwnTq8m0.png" alt="Project 1">
+                <img src="Project1.png" alt="Project 1">
                 <div class="portfolio-layer">
-                    <h4>E-Commerce Platform</h4>
-                    <p>A modern online shopping experience featuring glowing cards and responsive product listings.</p>
+                    <h4>India Temple Heritage & Pilgrimage Information Portal</h4>
+                    <p>Detailed guide and project requirements for the India Temple Heritage & Pilgrimage Information
+                        Portal analysis.</p>
                     <a href="#"><i class='bx bx-link-external'></i></a>
                 </div>
             </div>
             <div class="portfolio-box">
-                <img src="/assets/project2-BLz7-iU_.png" alt="Project 2">
+                <img src="Project2.png" alt="Project 2">
                 <div class="portfolio-layer">
                     <h4>RentEase - Furniture & Appliance Rental Platform</h4>
-                    <p>Detailed guide and project requirements for the RentEase – Furniture & Appliance Rental Platform analysis.</p>
+                    <p>Detailed guide and project requirements for the RentEase – Furniture & Appliance Rental Platform
+                        analysis.</p>
                     <a href="#"><i class='bx bx-link-external'></i></a>
                 </div>
             </div>
             <div class="portfolio-box">
-                <img src="/assets/project3--nxCamHQ.png" alt="Project 3">
+                <img src="Project3.png" alt="Project 3">
                 <div class="portfolio-layer">
-                    <h4>Task Board Manager</h4>
-                    <p>Kanban project management tool featuring smooth transitions and category filters.</p>
+                    <h4>Check-In & Check-Out Management System</h4>
+                    <p>Developed a Check-In & Check-Out Management System to efficiently track user attendance and
+                        activity records in real time.</p>
+                    <a href="#"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="/Portfolio-/assets/Project4-c3R24EXZ.png" alt="Project 4">
+                <div class="portfolio-layer">
+                    <h4>PyroTankX: Battle Command</h4>
+                    <p>Designed and developed an action-packed tank warfare game with smooth controls and immersive
+                        gameplay.</p>
                     <a href="#"><i class='bx bx-link-external'></i></a>
                 </div>
             </div>
@@ -163,4 +302,5 @@
     </footer>
 
 </body>
+
 </html>
