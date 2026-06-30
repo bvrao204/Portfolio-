@@ -127,3 +127,54 @@ document.querySelectorAll('.chart-dashboard').forEach(dashboard => {
         item.addEventListener('mouseenter', () => activateSkill(item));
     });
 });
+
+/* ==================== AJAX Contact Form Submission ==================== */
+const contactForm = document.querySelector('#contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Stop page redirect
+        
+        const submitBtn = contactForm.querySelector('input[type="submit"]');
+        const statusEl = document.querySelector('#form-status');
+        const originalBtnValue = submitBtn.value;
+        
+        submitBtn.value = "Sending...";
+        submitBtn.disabled = true;
+
+        const formData = new FormData(contactForm);
+        const data = {};
+        formData.forEach((value, key) => data[key] = value);
+
+        fetch(contactForm.action, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            statusEl.style.display = 'block';
+            if (response.ok) {
+                statusEl.style.color = '#0ef';
+                statusEl.textContent = 'Message sent successfully! Thank you.';
+                contactForm.reset();
+            } else {
+                statusEl.style.color = '#ff6b6b';
+                statusEl.textContent = 'Oops! There was a problem sending your message.';
+            }
+        })
+        .catch(error => {
+            statusEl.style.display = 'block';
+            statusEl.style.color = '#ff6b6b';
+            statusEl.textContent = 'Oops! There was a problem sending your message.';
+        })
+        .finally(() => {
+            submitBtn.value = originalBtnValue;
+            submitBtn.disabled = false;
+            setTimeout(() => {
+                statusEl.style.display = 'none';
+            }, 6000);
+        });
+    });
+}
