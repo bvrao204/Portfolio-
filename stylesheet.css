@@ -281,13 +281,50 @@ section {
     background: #112e42;
 }
 
+.about-img {
+    position: relative;
+    width: 38rem;
+    height: 38rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 .about-img img {
-    width: 35rem;
-    height: 35rem;
+    width: 34rem;
+    height: 34rem;
     border-radius: 50%;
-    border: .4rem solid #0ef;
-    box-shadow: 0 0 20px #0ef;
+    border: .4rem solid #081b29;
     object-fit: cover;
+    z-index: 1;
+    transition: .5s ease;
+}
+
+.about-img::before {
+    content: '';
+    position: absolute;
+    width: 36.5rem;
+    height: 36.5rem;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, #0ef, #b975ff, #0ef);
+    animation: rotateGlow 6s linear infinite;
+    box-shadow: 0 0 30px rgba(0, 239, 255, 0.4);
+}
+
+.about-img:hover img {
+    transform: scale(1.03);
+}
+
+.about-img:hover::before {
+    box-shadow: 0 0 50px rgba(0, 239, 255, 0.8), 0 0 20px rgba(185, 117, 255, 0.6);
+    animation-duration: 3s;
+}
+
+@keyframes rotateGlow {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .about-content {
@@ -306,9 +343,12 @@ section {
 }
 
 .about-content p {
-    font-size: 1.8rem;
-    line-height: 1.8;
+    font-size: 2rem;
+    line-height: 1.85;
     margin-bottom: 3.5rem;
+    border-left: 4px solid #0ef;
+    padding-left: 2rem;
+    color: #dedede;
 }
 
 .about-content .btn-box {
@@ -317,7 +357,7 @@ section {
 }
 
 .portfolio {
-    background: #112e42;
+    background: #081b29;
 }
 
 .portfolio h2 {
@@ -412,7 +452,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: #081b29;
+    background: #112e42;
 }
 
 .contact h2 {
@@ -438,10 +478,10 @@ section {
     padding: 1.6rem;
     font-size: 1.6rem;
     color: #ededed;
-    background: #112e42;
+    background: #081b29;
     border-radius: .8rem;
     margin: .8rem 0;
-    border: .2rem solid transparent;
+    border: .2rem solid rgba(0, 239, 255, 0.1);
     transition: .3s;
 }
 
@@ -476,12 +516,14 @@ section {
 
 .skills-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5rem;
+    flex-direction: column;
+    gap: 6rem;
 }
 
 .skills-column {
-    flex: 1 1 40rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .skills-column .title {
@@ -495,9 +537,9 @@ section {
 .skills-box {
     background: #112e42;
     border: .2rem solid #0ef;
-    border-radius: .6rem;
-    padding: 3rem;
-    box-shadow: 0 0 15px rgba(0, 239, 255, 0.1);
+    border-radius: 1rem;
+    padding: 4rem;
+    box-shadow: 0 0 20px rgba(0, 239, 255, 0.15);
 }
 
 .chart-dashboard {
@@ -532,8 +574,8 @@ section {
 /* Gauge Chart CSS */
 .gauge-chart {
     position: relative;
-    width: 220px;
-    height: 135px;
+    width: 260px;
+    height: 160px;
 }
 
 .gauge-chart svg {
@@ -590,8 +632,8 @@ section {
 
 /* Legend Styling */
 .legend-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: 1.2rem;
     width: 100%;
 }
@@ -599,11 +641,11 @@ section {
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
     background: rgba(8, 27, 41, 0.4);
     border: 1px solid rgba(0, 239, 255, 0.1);
-    border-radius: 0.6rem;
-    padding: 0.8rem 1.2rem;
+    border-radius: 0.8rem;
+    padding: 1.2rem 1.8rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -623,14 +665,14 @@ section {
 }
 
 .legend-name {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: #ededed;
     flex-grow: 1;
 }
 
 .legend-val {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
     opacity: 0.8;
@@ -655,11 +697,17 @@ section {
 }
 .dot-js { background: #ffd33d; }
 
-.legend-item[data-skill="react"].active, .legend-item[data-skill="react"]:hover {
-    --theme-color: #ff6b6b;
-    --theme-rgb: 255, 107, 107;
+.legend-item[data-skill="python"].active, .legend-item[data-skill="python"]:hover {
+    --theme-color: #3572A5;
+    --theme-rgb: 53, 114, 165;
 }
-.dot-react { background: #ff6b6b; }
+.dot-python { background: #3572A5; }
+
+.legend-item[data-skill="sql"].active, .legend-item[data-skill="sql"]:hover {
+    --theme-color: #f2a99f;
+    --theme-rgb: 242, 169, 159;
+}
+.dot-sql { background: #f2a99f; }
 
 .legend-item[data-skill="design"].active, .legend-item[data-skill="design"]:hover {
     --theme-color: #0ef;
@@ -688,11 +736,11 @@ section {
 /* Details Card */
 .skills-details-card {
     width: 100%;
-    min-height: 110px;
+    min-height: 120px;
     background: rgba(8, 27, 41, 0.6);
     border: 1px solid rgba(0, 239, 255, 0.2);
     border-radius: .8rem;
-    padding: 1.5rem;
+    padding: 1.8rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
@@ -703,28 +751,28 @@ section {
 }
 
 .skills-details-card h4 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 5px;
+    padding-bottom: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .skills-details-card p {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #ededed;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .details-placeholder {
     color: #888 !important;
     text-align: center !important;
     font-style: italic;
-    font-size: 1.3rem !important;
-    margin-top: 1.5rem;
+    font-size: 1.4rem !important;
+    margin-top: 2rem;
 }
 
 /* Footer Styling */
@@ -734,7 +782,7 @@ section {
     align-items: center;
     flex-wrap: wrap;
     padding: 2.5rem 10%;
-    background: #112e42;
+    background: #081b29;
     border-top: .2rem solid #0ef;
 }
 
@@ -895,9 +943,24 @@ section {
         text-align: center;
     }
 
+    .about-content p {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .about-img {
+        width: 27rem;
+        height: 27rem;
+    }
+
     .about-img img {
-        width: 25rem;
-        height: 25rem;
+        width: 24rem;
+        height: 24rem;
+    }
+
+    .about-img::before {
+        width: 25.5rem;
+        height: 25.5rem;
     }
 
     .skills-row {
@@ -927,4 +990,121 @@ section {
     .home-content h1 {
         font-size: 3.8rem;
     }
+}
+
+/* Education Section Styling */
+.education {
+    background: #112e42;
+}
+
+.education-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.education-column {
+    flex: 1 1 40rem;
+}
+
+.education-column .title {
+    font-size: 2.5rem;
+    margin: 0 0 2.5rem;
+    color: #fff;
+    border-left: .4rem solid #0ef;
+    padding-left: 1rem;
+}
+
+.education-box {
+    border-left: .2rem solid #0ef;
+}
+
+.education-box .education-content {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.education-box .education-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    background: #0ef;
+    border-radius: 50%;
+}
+
+.education-content .content {
+    position: relative;
+    padding: 2rem;
+    border: .2rem solid #0ef;
+    border-radius: .6rem;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    background: rgba(8, 27, 41, 0.4);
+    box-shadow: 0 0 10px rgba(0, 239, 255, 0.1);
+    transition: .5s ease;
+}
+
+.education-content .content:hover {
+    box-shadow: 0 0 20px #0ef;
+    transform: translateY(-5px);
+}
+
+.education-content .content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #0ef;
+    z-index: -1;
+    transition: .5s ease;
+}
+
+.education-content .content:hover::before {
+    width: 100%;
+}
+
+.education-content .content .year {
+    font-size: 1.5rem;
+    color: #0ef;
+    padding-bottom: .5rem;
+}
+
+.education-content .content .year i {
+    padding-right: .5rem;
+}
+
+.education-content .content h3 {
+    font-size: 2rem;
+    transition: color .5s ease;
+}
+
+.education-content .content p {
+    font-size: 1.4rem;
+    padding-top: .5rem;
+    transition: color .5s ease;
+}
+
+.education-content .content ul {
+    padding-left: 2rem;
+    margin-top: 1rem;
+}
+
+.education-content .content li {
+    font-size: 1.4rem;
+    color: #ededed;
+    margin-bottom: 0.5rem;
+    transition: color .5s ease;
+}
+
+.education-content .content:hover h3,
+.education-content .content:hover p,
+.education-content .content:hover .year,
+.education-content .content:hover li,
+.education-content .content:hover i {
+    color: #081b29;
 }
